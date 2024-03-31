@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* typography */
+h1{
+  @apply lg:text-4xl text-3xl text-dark font-semibold
+}
