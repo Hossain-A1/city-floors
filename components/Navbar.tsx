@@ -1,7 +1,42 @@
+"use client"
 // import useProductSearch from "@/hooks/useProductSearch";
+import { getAuth, onAuthStateChanged, User, signOut } from "firebase/auth";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import app from "../firebase/firebase-init";
 
 const Navbar = () => {
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+  console.log(user);
+
+  useEffect(() => {
+    const auth = getAuth(app);
+  
+    // Function to handle authentication state change
+    const unsubscribe = onAuthStateChanged(auth, (data) => {
+      if (data) {
+        setUser(data);
+      } else {
+        console.log("No user found");
+      }
+    });
+  
+    return () => unsubscribe(); // Unsubscribe from the onAuthStateChanged listener when component unmounts
+  }, []);
+  
+  const handleSignOut = async () => {
+    const auth = getAuth(app);
+    try {
+      await signOut(auth);
+      router.push("/login");
+    } catch (error) {
+      console.error("Error signing out:", error);
+    }
+  };
+
   // const { searchQuery, handleSearch, filteredProduct } = useProductSearch(
   //   data || []
   // );
@@ -38,14 +73,37 @@ const Navbar = () => {
             />
           </li>
         </ul>
-        <ul className='flex justify-center items-center gap-5'>
-          <li>
-            <Link href='/login'>Login</Link>
-          </li>
-          <li>
-            <Link href='/signup'>Sign up</Link>
-          </li>
-        </ul>
+        {!user ? (
+          <ul className='flex justify-center items-center gap-5'>
+            <li>
+              <Link href='/login'>Login</Link>
+            </li>
+            <li>
+              <Link href='/signup'>Sign up</Link>
+            </li>
+          </ul>
+        ) : (
+          <div className='flex justify-center items-center gap-5'>
+            <div>
+              <button className="py-2 px-4 rounded" onClick={handleSignOut}>Logout</button>
+            </div>
+            {user.photoURL && (
+              <figure className='h-14 w-14 rounded-full overflow-hidden'>
+                <Image
+                  src={user.photoURL}
+                  alt={user.displayName || "User Photo"}
+                  height={64}
+                  width={64}
+                  priority
+                  className='h-full w-full object-cover'
+                />
+              </figure>
+              
+            )}
+
+            
+          </div>
+        )}
       </div>
     </nav>
   );
