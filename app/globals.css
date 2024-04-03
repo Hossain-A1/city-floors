@@ -1,8 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  @apply bg-dark h-full w-3;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue;
+}
+.eq {
+  transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.sp {
+  @apply py-10;
+}
 /* typography */
-h1{
-  @apply lg:text-4xl text-3xl text-dark font-semibold
+h1 {
+  @apply lg:text-4xl text-2xl whitespace-nowrap text-dark font-semibold ;
+} 
+
+.sp {
+  @apply py-20;
 }
