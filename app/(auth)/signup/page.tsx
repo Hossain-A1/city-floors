@@ -4,6 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import useLoginUser from "@/hooks/useLoginUser";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 
 const SignupPage = () => {
   const {
@@ -85,11 +86,26 @@ const SignupPage = () => {
         </div>
       </div>
 
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-        voluptates ratione nulla nam necessitatibus incidunt cum ipsa, nemo eius
-        voluptas. Eligendi qui at sit incidunt delectus deserunt ab cupiditate
-        rem.
+      <div className='flex justify-center flex-col gap-5 items-center max-lg:hidden'>
+        <figure className='h-[26rem] w-[26rem] rounded-full shadow-md overflow-hidden'>
+          <Image
+            src='https://t3.ftcdn.net/jpg/03/91/11/12/240_F_391111200_hKQDOi6Edd6LsA7jM2KJ4ZKDdxUAzh4W.jpg'
+            alt='login'
+            height='720'
+            width='1280'
+            priority
+            className='h-full w-full'
+          />
+        </figure>
+
+        <div className='flex flex-col gap-5 items-center'>
+          <h2>Create an account</h2>
+          <small>You can access our all features after sign up.</small>
+          <div className="flex items-center gap-2">
+          <span className='h-4 w-14 bg-orange p-2 rounded-full'></span>
+          <span className='h-4 w-4 bg-blue p-2 rounded-full'></span>
+          </div>
+        </div>
       </div>
     </main>
   );

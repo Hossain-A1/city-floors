@@ -16,7 +16,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        dark: "#1B1B1D",
+        dark: "#7F7C82",
         light: "#FFFFFF",
         blue: "#0C359E",
         danger:"#E72929",
