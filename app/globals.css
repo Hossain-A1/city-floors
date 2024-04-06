@@ -16,7 +16,7 @@ html {
 
 /* typography */
 h1 {
-  @apply lg:text-4xl text-2xl whitespace-nowrap text-dark font-semibold ;
+  @apply lg:text-4xl text-2xl  text-black font-semibold ;
 } 
 h2{
   @apply text-2xl text-black font-semibold

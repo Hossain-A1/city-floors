@@ -20,22 +20,22 @@ const SignupPage = () => {
   } = useLoginUser();
 
   return (
-    <main className='sp container min-h-screen   items-center  grid lg:grid-cols-2 grid-cols-1 gap-5'>
+    <main className='sp mt-5 container min-h-screen   items-center  grid lg:grid-cols-2 grid-cols-1 gap-5'>
       <div className='flex  flex-col items-center justify-center gap-5 h-full w-full '>
-        <div className='flex flex-col items-center  gap-3'>
+        <div className='flex flex-col items-center  gap-3 w-full'>
           <h1>Sugnup to your account.</h1>
           <h6>Signup to get more features: </h6>
 
           <div className='flex w-full h-full  lg:flex-row flex-col items-center justify-center  gap-5'>
             <button
               onClick={loginWithGoogle}
-              className='border shadow-sm py-2 lg:w-40 w-full rounded flex justify-center items-center gap-1 text-center font-medium text-sm'
+              className='border shadow-sm py-2.5 lg:w-40 w-full rounded flex justify-center items-center gap-1 text-center font-medium text-sm'
             >
               <FcGoogle className='text-xl' /> Google
             </button>
             <button
               onClick={loginWithFB}
-              className='border shadow-sm py-2 lg:w-40 w-full rounded flex justify-center items-center gap-1 text-center font-medium text-sm'
+              className='border shadow-sm py-2.5 lg:w-40 w-full rounded flex justify-center items-center gap-1 text-center font-medium text-sm'
             >
               <FaFacebook className='text-xl text-blue' /> Facebook
             </button>
@@ -49,7 +49,7 @@ const SignupPage = () => {
         <div className=' w-full lg:w-[21rem] xl:w-[30rem]'>
           <form onSubmit={handleLogin} className=' flex flex-col gap-3'>
             <input
-              className='py-2 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
+              className='py-2.5 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
               type='text'
               placeholder='Name'
               value={name}
@@ -57,7 +57,7 @@ const SignupPage = () => {
               required
             />
             <input
-              className='py-2 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
+              className='py-2.5 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
               type='email'
               placeholder='Email'
               value={email}
@@ -65,7 +65,7 @@ const SignupPage = () => {
               required
             />
             <input
-              className='py-2 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
+              className='py-2.5 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
               type='password'
               placeholder='Password'
               value={password}
