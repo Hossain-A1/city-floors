@@ -48,7 +48,7 @@ const Navbar = () => {
   // );
   return (
     <nav
-      className='fixed top-0 left-0 z-[999]
+      className='fixed top-0 left-0 z-[999] 
     right-0 lg:h-20  border-b backdrop-blur-xl bg-light/10'
     >
       <div className='container flex  items-center lg:justify-between  w-full h-full max-lg:relative'>
@@ -86,7 +86,7 @@ const Navbar = () => {
         </div>
 
         <div className={`${!openModal ? "max-lg:hidden" : "visible eq"}`}>
-          <div className='max-lg:bg-blue max-lg:eq max-lg:text-light max-lg:h-[100vh] flex max-lg:flex-col   items-center gap-10 lg:justify-between  max-lg:absolute max-lg:left-0 max-lg:bottom-0 max-lg:top-20 max-lg:right-20 z-[998]'>
+          <div className='max-lg:bg-blue max-lg:eq max-lg:text-light max-lg:h-[100vh] flex max-lg:flex-col   items-center gap-10 lg:justify-between max-lg:origin-left eq max-lg:absolute max-lg:left-0 max-lg:bottom-0 max-lg:top-20 max-lg:right-20 z-[998]'>
             <ul className='flex max-lg:flex-col justify-center items-center gap-5 '>
               <li>
                 <Link href='/shop' className='font-semibold text-lg'>

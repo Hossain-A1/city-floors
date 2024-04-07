@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
 
 export const buttonVariants = cva(
-  "eq inline-block whitespace-nowrap  rounded-md border px-4 py-2.5 text-center text-lg disabled:cursor-default disabled:border-gray disabled:bg-gray disabled:text-black",
+  "eq inline-block whitespace-nowrap border-none  rounded-md border px-4 py-2.5 text-center text-lg disabled:cursor-default disabled:border-gray disabled:bg-gray disabled:text-black",
   {
     variants: {
       variant: {
@@ -11,7 +11,7 @@ export const buttonVariants = cva(
         secondary: "bg-blue text-white  font-medium  hover:border-blue  ",
         danger: "bg-danger text-light  hover:border-danger ",
         outline:
-          "bg-transparent text-white border-blue hover:bg-blue hover:text-white",
+          "bg-orange text-white border-orange",
         orange: "bg-orange text-light font-medium  border hover:border-orange ",
         deepLight: "bg-light/70 text-dark border-none  ",
       },
