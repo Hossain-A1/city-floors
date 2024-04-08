@@ -11,12 +11,12 @@ import { useRouter } from "next/navigation";
 import app from "../firebase/firebase-init";
 import { cn } from "@/lib/utils";
 import Button, { buttonVariants } from "./ui/Button";
+import Overlay from "./ui/Overlay";
 
 const Navbar = () => {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
-  console.log(user);
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -49,10 +49,10 @@ const Navbar = () => {
   return (
     <nav
       className='fixed top-0 left-0 z-[999] 
-    right-0 lg:h-20  border-b backdrop-blur-xl bg-light/10'
+    right-0 lg:h-20  border-b backdrop-blur-xl bg-light/70'
     >
       <div className='container flex  items-center lg:justify-between  w-full h-full max-lg:relative'>
-        <div className='max-lg:absolute max-lg:top-0 max-lg:left-0 px-2 max-lg:right-0 bg-light/90 border-b backdrop-blur-xl flex justify-between items-center gap-5 w-full h-20 '>
+        <div className='max-lg:absolute max-lg:top-0 max-lg:left-0 px-2 max-lg:right-0 max-lg:bg-light/70  border-b  flex justify-between items-center gap-5 w-full h-20 '>
           <div className='flex items-center justify-center gap-0.5'>
             <span className='text-4xl font-extrabold text-orange'>
               <MdOutlineShoppingCartCheckout />

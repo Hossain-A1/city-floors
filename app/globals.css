@@ -13,22 +13,42 @@ html {
 .eq {
   transition: 500ms cubic-bezier(0.25, 1, 0.5, 1);
 }
-
-/* typography */
-h1 {
-  @apply lg:text-4xl text-2xl  text-black font-semibold ;
-} 
-h2{
-  @apply text-2xl text-black font-semibold
-}
-p{
-  @apply text-lg font-medium text-wrap
-}
-
 .sp {
   @apply py-20;
 }
+/* typography */
+h1 {
+  @apply lg:text-4xl text-2xl  text-black font-semibold;
+}
+h2 {
+  @apply text-2xl text-black font-semibold;
+}
+h3 {
+  @apply text-2xl lg:text-3xl uppercase font-bold text-orange tracking-[0.25em];
+}
+h4 {
+  @apply text-lg font-medium text-wrap text-blue;
+}
+p{
+  @apply text-lg  text-black font-medium;
+}
 
-small{
-  @apply text-sm text-black font-medium
+
+small {
+  @apply text-sm text-black font-medium;
+}
+
+@keyframes custom-ping {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 15;
+  }
+}
+
+.animate-custom-ping {
+  animation: custom-ping 5s ease-in-out infinite;
 }

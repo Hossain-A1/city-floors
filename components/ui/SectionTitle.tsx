@@ -1,13 +1,13 @@
-import React from "react";
+interface SectionTitleProps {
+  title: string;
+  subtitle: string;
+}
 
-const SectionTitle = ({
-  title: { title: title = "" },
-  subtitle: { subtitle: subtitle = "" },
-}) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle }) => {
   return (
-    <div className='space-y-2.5'>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+    <div className='flex flex-col justify-center items-center gap-2.5' >
+      <h3>{title}</h3>
+      <h4>{subtitle}</h4>
     </div>
   );
 };

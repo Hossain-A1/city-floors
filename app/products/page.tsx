@@ -1,5 +1,4 @@
 import Products from '@/components/Products'
-import React from 'react'
 
 const ProductPage = () => {
   return (

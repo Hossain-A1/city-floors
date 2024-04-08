@@ -1,8 +1,14 @@
-import React from 'react'
+import SectionTitle from "./ui/SectionTitle"
 
 const Products = () => {
   return (
-    <div className='sp'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam et excepturi praesentium iusto nemo blanditiis, quo inventore tempora dicta. Commodi laborum quis explicabo eius enim sed neque animi inventore aliquid, optio, deserunt corporis rem voluptates soluta doloremque eum labore sit! Cum dolor minima debitis doloremque, aspernatur earum, vitae natus quod nostrum porro voluptatum, exercitationem impedit quam! Id, error accusamus accusantium aliquid ducimus esse non magni? Expedita quos, minus ratione quisquam sequi esse animi ipsam cum debitis eaque. Aspernatur modi unde similique repellendus officia sequi illum libero illo expedita quam! Ipsa velit accusamus voluptas doloribus eum similique quidem quisquam, reprehenderit, itaque culpa expedita omnis iusto magni provident voluptatem amet quos ex numquam odit. Maiores quisquam perspiciatis quam beatae voluptatibus mollitia, culpa deleniti cum dolores, unde odio. Deserunt atque repellendus id expedita asperiores saepe, quaerat veniam assumenda magni aut. Illo nesciunt perspiciatis ea neque molestias aspernatur quidem impedit tempore dolorum ratione reiciendis vero, sint libero iste similique accusamus pariatur quos distinctio. Temporibus optio excepturi aliquam possimus beatae illo facere minus dignissimos iusto cupiditate nisi quae architecto consequatur vitae aliquid tenetur eaque, distinctio, ab maxime natus, sapiente ipsa nobis. Ex libero expedita numquam earum aut, culpa quos delectus incidunt repellendus. Voluptas suscipit perspiciatis asperiores nulla deleniti, culpa, saepe quae maxime veniam beatae magnam quasi rerum minima nesciunt quidem in commodi! Hic omnis non, doloribus quas tempore beatae voluptas libero. Velit explicabo doloremque soluta accusantium, distinctio error impedit odio autem odit! Animi officia, architecto cum iste dolor, tempora, recusandae nulla et ipsa reprehenderit mollitia ab nobis eos fuga nemo voluptatibus atque dolore iure dolorem. Rerum a aut, ad nesciunt illum numquam maxime! Quos id sint dicta accusamus perspiciatis explicabo magnam quas architecto? Eum veritatis voluptatem sed voluptatum omnis ea qui magnam, sit veniam eaque hic quas id soluta laudantium, quidem sint consequatur. Labore iure soluta, nulla totam ab voluptate ipsum. Eaque eveniet similique repudiandae accusamus ea harum facilis molestias accusantium a voluptatem. Maxime facilis optio numquam eum ab explicabo dolore voluptatum reiciendis voluptates at illum ad, veritatis aspernatur minima nihil quo id in fuga repudiandae quos, quis dolorum ipsa consectetur adipisci. Illum culpa velit voluptate beatae unde sequi modi quas eum repellendus accusantium, molestiae officiis fugit nulla distinctio facere ipsam. Numquam dolor, dicta reiciendis minus perferendis maiores, ut perspiciatis, corporis at repudiandae provident quod consectetur! Nesciunt tenetur fugiat doloribus modi magnam! Dignissimos, consequuntur magni sequi adipisci iure, aspernatur provident nobis a suscipit hic rerum.</div>
+    <div>
+      <div>
+        <div>
+          <SectionTitle title='Products' subtitle='Visit our shop and find your dream!'/>
+        </div>
+      </div>
+    </div>
   )
 }
 
