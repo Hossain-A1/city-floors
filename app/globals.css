@@ -29,10 +29,9 @@ h3 {
 h4 {
   @apply text-lg font-medium text-wrap text-blue;
 }
-p{
+p {
   @apply text-lg  text-black font-medium;
 }
-
 
 small {
   @apply text-sm text-black font-medium;
@@ -51,4 +50,17 @@ small {
 
 .animate-custom-ping {
   animation: custom-ping 5s ease-in-out infinite;
+}
+
+/* feature modal */
+.feature-modal {
+  @apply relative;
+}
+
+.feature-modal::after {
+  @apply eq absolute bottom-0 left-0 right-0 h-0 w-full  bg-orange/70 content-[""];
+}
+
+.feature-modal:hover::after {
+  @apply h-3/4;
 }
