@@ -4,7 +4,7 @@ import { FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer>
-      <div className='bg-blue/30 w-full py-3 hover:bg-blue/40 eq flex items-center justify-center'>
+      <div className='bg-blue/30 w-full py-3 hover:bg-blue/40 eq flex items-center justify-center '>
         <button onClick={() => window.scrollTo(0, 0)}>Back to Top</button>
       </div>
       <div className='grid grid-cols-3 max-lg:grid-cols-1 gap-5 bg-blue text-light p-5'>

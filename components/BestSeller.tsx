@@ -28,9 +28,7 @@ const BestSeller = () => {
           />
 
           <div className='absolute left-0  right-0 bottom-0 w-full h-4/5'>
-           <div className="feature-modal h-full w-full z-50">
- 666
-           </div>
+            <div className='feature-modal h-full w-full z-50'>666</div>
           </div>
         </div>
         <div className='lg:h-[15.5rem] xl:h-[18rem] h-full w-full border-4 border-blue border-opacity-5 hover:scale-105 eq '>
@@ -65,7 +63,7 @@ const BestSeller = () => {
           className='h-full w-full object-fill'
         />
 
-        <div className='absolute top-1/2 lg:left-1/2 left-0 transform lg:-translate-x-10 -translate-y-1/2 z-10 space-y-5 text-center lg:w-1/2  w-full '>
+        <div className='absolute top-1/2 lg:left-[60%] right-0 transform lg:-translate-x-0 -translate-y-1/2 z-10 space-y-5 text-center lg:w-1/3 w-full '>
           <h1>Best deal today!</h1>
           <p>
             Grab the Hottest Deals Today for the Best Prices on Quality

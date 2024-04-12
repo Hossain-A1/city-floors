@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import app from "../firebase/firebase-init";
 import { cn } from "@/lib/utils";
 import Button, { buttonVariants } from "./ui/Button";
-import Overlay from "./ui/Overlay";
 
 const Navbar = () => {
   const router = useRouter();
@@ -49,7 +48,7 @@ const Navbar = () => {
   return (
     <nav
       className='fixed top-0 left-0 z-[999] 
-    right-0 lg:h-20  border-b backdrop-blur-xl bg-light/70'
+    right-0 lg:h-20 shadow-sm backdrop-blur-xl bg-light/70'
     >
       <div className='container flex  items-center lg:justify-between  w-full h-full max-lg:relative'>
         <div className='max-lg:absolute max-lg:top-0 max-lg:left-0 px-2 max-lg:right-0 max-lg:bg-light/70  border-b  flex justify-between items-center gap-5 w-full h-20 '>
@@ -111,12 +110,12 @@ const Navbar = () => {
             </ul>
             {!user ? (
               <ul className='flex   max-lg:flex-col justify-between items-center gap-5'>
-                <li>
+                <li >
                   <Link
                     href='/login'
                     className={cn(
                       buttonVariants({ variant: "secondary" }),
-                      "w-32"
+                      "w-40 "
                     )}
                   >
                     Login
@@ -127,7 +126,7 @@ const Navbar = () => {
                     href='/signup'
                     className={cn(
                       buttonVariants({ variant: "orange" }),
-                      "w-32"
+                      "w-40"
                     )}
                   >
                     Sign up
@@ -138,8 +137,8 @@ const Navbar = () => {
               <div className='flex justify-center items-center gap-5'>
                 <div>
                   <Button
+                 
                     variant='danger'
-                    className='py-2 px-4 rounded'
                     onClick={handleSignOut}
                   >
                     Logout

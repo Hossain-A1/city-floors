@@ -64,3 +64,15 @@ small {
 .feature-modal:hover::after {
   @apply h-3/4;
 }
+
+.button-modal {
+  @apply relative;
+}
+
+.button-modal::after {
+  @apply eq absolute top-0 left-0 right-0 h-0 w-full  bg-dark/10 content-[""];
+}
+
+.button-modal:hover::after {
+  @apply h-full;
+}
