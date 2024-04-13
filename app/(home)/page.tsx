@@ -3,6 +3,7 @@ import Features from "@/components/Features";
 import HeroSection from "@/components/HeroSection";
 import ImageHeroSection from "@/components/ImageHeroSection";
 import Products from "@/components/Products";
+import UserReviews from "@/components/UserReviews";
 
 const Homepage = () => {
   return (
@@ -12,6 +13,7 @@ const Homepage = () => {
       <Features/>
       <BestSeller/>
       <Products />
+      <UserReviews/>
     </main>
   );
 };

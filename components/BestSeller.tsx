@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 import SectionTitle from "./ui/SectionTitle";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,9 +8,10 @@ import { buttonVariants } from "./ui/Button";
 import { FcLike } from "react-icons/fc";
 
 const BestSeller = () => {
+  const [modal, setModal] = useState<boolean>(false);
   return (
-    <div className='h-full w-full flex flex-col gap-2.5'>
-      <div>
+    <div className='h-full w-full flex flex-col'>
+      <div className='py-2.5'>
         <SectionTitle
           title='best seller'
           subtitle={`Don't wait any longer and discover other related products`}
@@ -17,18 +19,18 @@ const BestSeller = () => {
       </div>
       <div className='best-products h-full w-full grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5'>
         {/* products will come from api */}
-        <div className='lg:h-[15.5rem] xl:h-[18rem] h-full w-full border-4 border-blue border-opacity-5 hover:scale-105 eq relative  z-30 '>
+        <div className='lg:h-[15.5rem] xl:h-[18rem] h-full w-full border-4 border-blue border-opacity-5  eq relative  z-20'>
           <Image
             src='https://t4.ftcdn.net/jpg/04/16/25/41/360_F_416254116_himOdBQepnp9VxudpqPkkEHY8WevDB7k.jpg'
             alt='hero image'
             priority
             height='720'
             width='1280'
-            className='h-full w-full object-fill '
+            className='h-full w-full object-fill'
           />
 
-          <div className='absolute left-0  right-0 bottom-0 w-full h-4/5'>
-            <div className='feature-modal h-full w-full z-50'>666</div>
+          <div className='best-sell-modal flex justify-center items-center'>
+            <p>Lorem ipsum dolor sit</p>
           </div>
         </div>
         <div className='lg:h-[15.5rem] xl:h-[18rem] h-full w-full border-4 border-blue border-opacity-5 hover:scale-105 eq '>
