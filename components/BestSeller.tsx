@@ -1,14 +1,11 @@
-"use client";
-import { useState } from "react";
 import SectionTitle from "./ui/SectionTitle";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
-import { FcLike } from "react-icons/fc";
+import { Eye, Heart } from "lucide-react";
 
 const BestSeller = () => {
-  const [modal, setModal] = useState<boolean>(false);
   return (
     <div className='h-full w-full flex flex-col'>
       <div className='py-2.5'>
@@ -29,8 +26,13 @@ const BestSeller = () => {
             className='h-full w-full object-fill'
           />
 
-          <div className='best-sell-modal flex justify-center items-center'>
-            <p>Lorem ipsum dolor sit</p>
+          <div className='best-sell-modal flex gap-5 justify-center items-center'>
+            <button className='p-2  bg-dark rounded-full shadow-md shadow-blue'>
+              <Heart className='text-red cursor-pointer text-6xl ' />{" "}
+            </button>
+            <button className='p-2 bg-dark rounded-full shadow-md shadow-blue'>
+              <Eye className='text-red cursor-pointer text-6xl ' />{" "}
+            </button>
           </div>
         </div>
         <div className='lg:h-[15.5rem] xl:h-[18rem] h-full w-full border-4 border-blue border-opacity-5 hover:scale-105 eq '>

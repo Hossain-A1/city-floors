@@ -5,19 +5,49 @@ import useLoginUser from "@/hooks/useLoginUser";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
+import { userLoginPost } from "@/lib/userLoginPost";
+import toast from "react-hot-toast";
+interface SignUpFormData {
+  name: string;
+  email: string;
+  password: string;
+}
 
 const SignupPage = () => {
-  const {
-    handleLogin,
-    loginWithFB,
-    loginWithGoogle,
-    emailHaldleChange,
-    handleNameChange,
-    passHanldeChange,
-    name,
-    email,
-    password,
-  } = useLoginUser();
+  const { loginWithFB, loginWithGoogle } = useLoginUser();
+  const [formData, setFormData] = useState<SignUpFormData>({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const router = useRouter();
+  const handleSubmit = useCallback(
+    async (e: React.SyntheticEvent) => {
+      e.preventDefault();
+      setLoading(true);
+
+      const data = await userLoginPost("/api/auth/register", formData)
+
+      if (data) {
+        setLoading(false);
+        setFormData({
+          name: "",
+          email: "",
+          password: "",
+        });
+        toast.success("Register successfull");
+        router.push("/");
+      } else {
+        setLoading(false);
+      }
+    },
+    [formData, router]
+  );
 
   return (
     <main className='sp mt-5 container min-h-screen   items-center  grid lg:grid-cols-2 grid-cols-1 gap-5'>
@@ -47,32 +77,38 @@ const SignupPage = () => {
           <hr className='border border-blue w-12 lg:w-20' />
         </div>
         <div className=' w-full lg:w-[21rem] xl:w-[30rem]'>
-          <form onSubmit={handleLogin} className=' flex flex-col gap-3'>
+          <form onSubmit={handleSubmit} className=' flex flex-col gap-3'>
             <input
               className='py-2.5 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
               type='text'
               placeholder='Name'
-              value={name}
-              onChange={handleNameChange}
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               required
             />
             <input
               className='py-2.5 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
               type='email'
               placeholder='Email'
-              value={email}
-              onChange={emailHaldleChange}
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
             />
             <input
               className='py-2.5 eq px-4 rounded outline-none border bg-light focus:border-blue shadow-sm'
               type='password'
               placeholder='Password'
-              value={password}
-              onChange={passHanldeChange}
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
               required
             />
-            <Button type='submit' variant='orange'>
+            <Button type='submit' variant='orange' isLoading={loading}>
               Sign up
             </Button>
             <hr />
@@ -101,9 +137,9 @@ const SignupPage = () => {
         <div className='flex flex-col gap-5 items-center'>
           <h2>Create an account</h2>
           <small>You can access our all features after sign up.</small>
-          <div className="flex items-center gap-2">
-          <span className='h-4 w-14 bg-orange p-2 rounded-full'></span>
-          <span className='h-4 w-4 bg-blue p-2 rounded-full'></span>
+          <div className='flex items-center gap-2'>
+            <span className='h-4 w-14 bg-orange p-2 rounded-full'></span>
+            <span className='h-4 w-4 bg-blue p-2 rounded-full'></span>
           </div>
         </div>
       </div>

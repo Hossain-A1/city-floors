@@ -70,7 +70,7 @@ small {
 }
 
 .best-sell-modal {
-  @apply absolute eq bottom-0 origin-bottom left-0 right-0 h-10 w-full z-40  bg-orange/70 content-[""];
+  @apply absolute eq bottom-0 origin-bottom left-0 right-0 h-10 w-full z-40  bg-orange/50 content-[""];
 }
 
 .best-sell-modal:hover {
