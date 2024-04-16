@@ -1,6 +1,8 @@
-import React from 'react'
-
-const ClothesContainer = () => {
+import { productType } from '@/types/productsType'
+interface ClothesContainerProps{
+  product:productType
+  }
+const ClothesContainer:React.FC<ClothesContainerProps > = () => {
   return (
     <div>ClothesContainer</div>
   )

@@ -18,19 +18,22 @@ html {
 }
 /* typography */
 h1 {
-  @apply lg:text-4xl text-2xl  text-black font-semibold;
+  @apply lg:text-6xl text-4xl tracking-wider  text-black font-bold capitalize;
 }
 h2 {
   @apply text-2xl text-black font-semibold;
 }
 h3 {
-  @apply text-2xl lg:text-3xl uppercase font-bold text-orange tracking-[0.25em];
+  @apply text-2xl lg:text-3xl uppercase font-bold text-black tracking-[0.25em];
 }
 h4 {
-  @apply text-lg font-medium text-wrap text-blue;
+  @apply text-lg font-medium text-wrap text-black;
+}
+h5{
+  @apply text-lg font-[700] capitalize
 }
 p {
-  @apply text-lg  text-black font-medium;
+  @apply md:text-lg text-[1rem]  text-dark font-[300];
 }
 
 small {
@@ -74,5 +77,11 @@ small {
 }
 
 .best-sell-modal:hover {
+  @apply h-3/4  eq;
+}
+.best-feature-modal {
+  @apply absolute eq bottom-0 origin-bottom left-0 right-0 h-10 w-full z-40  bg-blue/50 content-[""];
+}
+.best-feature-modal:hover {
   @apply h-3/4  eq;
 }

@@ -1,6 +1,9 @@
+import { productType } from '@/types/productsType'
 import React from 'react'
-
-const OparatingContainer = () => {
+interface OparatingContainerProps{
+product:productType
+}
+const OparatingContainer :React.FC<OparatingContainerProps>= ({product}) => {
   return (
     <div>OparatingContainer</div>
   )

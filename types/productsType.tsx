@@ -1,7 +1,7 @@
 import { orderType } from "./ordersType";
 
 
-export type droneType= {
+export type productType= {
   _id:string;
   title: string;
   description: string;

@@ -4,8 +4,8 @@ interface ErrorProps {
 
 const Error: React.FC<ErrorProps> = ({ error }) => {
   return (
-    <div className='text-center text-rose-700'>
-      <p>{error}</p>
+    <div className='text-center text-red'>
+      <h2>{error}</h2>
     </div>
   );
 };

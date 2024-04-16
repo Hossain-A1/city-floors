@@ -5,7 +5,7 @@ const Products = () => {
     <div>
       <div>
         <div>
-          <SectionTitle title='Products' subtitle='Visit our shop and find your dream!'/>
+          <SectionTitle title='Products' subtitle='Visit our shop and find out your dreams product!'/>
         </div>
       </div>
     </div>

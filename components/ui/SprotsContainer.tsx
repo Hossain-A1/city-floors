@@ -1,9 +1,11 @@
-import React from 'react'
+import { productType } from "@/types/productsType";
 
-const SprotsContainer = () => {
-  return (
-    <div>SprotsContainer</div>
-  )
+interface SprotsContainerProps {
+  product: productType;
 }
 
-export default SprotsContainer
+const SprotsContainer: React.FC<SprotsContainerProps> = ({ product }) => {
+  return <div>SprotsContainer</div>;
+};
+
+export default SprotsContainer;

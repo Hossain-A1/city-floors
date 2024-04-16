@@ -1,6 +1,10 @@
-import React from 'react'
+import { productType } from "@/types/productsType"
 
-const ElectronicContainer = () => {
+interface ElectronicContainerProps{
+  product:productType
+  }
+
+const ElectronicContainer:React.FC<ElectronicContainerProps> = ({product}) => {
   return (
     <div>ElectronicContainer</div>
   )

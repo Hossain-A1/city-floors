@@ -7,7 +7,7 @@ import UserReviews from "@/components/UserReviews";
 
 const Homepage = () => {
   return (
-    <main className='container sp'>
+    <main className='container flex flex-col gap-20 sp'>
       <HeroSection />
       <ImageHeroSection/>
       <Features/>
