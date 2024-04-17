@@ -21,10 +21,10 @@ h1 {
   @apply lg:text-6xl text-4xl tracking-wider  text-black font-bold capitalize;
 }
 h2 {
-  @apply text-2xl text-black font-semibold;
+  @apply md:text-2xl text-xl text-light font-semibold capitalize;
 }
 h3 {
-  @apply text-2xl lg:text-3xl uppercase font-bold text-black tracking-[0.25em];
+  @apply text-2xl lg:text-3xl text-center capitalize font-bold text-black tracking-[0.25em];
 }
 h4 {
   @apply text-lg font-medium text-wrap text-black;

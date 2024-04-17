@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import ClothesContainer from "@/components/ui/ClothesContainer";
 import ElectronicContainer from "@/components/ui/ElectronicContainer";
 import Error from "@/components/ui/Error";
@@ -9,6 +9,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import SportsContainer from "@/components/ui/SprotsContainer";
 import useFetch from "@/hooks/useFetch";
 import { productType } from "@/types/productsType";
+import { GiThreeLeaves } from "react-icons/gi";
 
 const ShopPage = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
@@ -20,21 +21,21 @@ const ShopPage = () => {
     Clothes: ClothesContainer,
     Sports: SportsContainer,
   };
-  if (isLoading) return <Loading />;
-  if (error) return <Error error={error.message} />;
-  if (!products || products.length === 0) return <div>No products found.</div>;
+
   return (
-    <div className='container sp'>
+    <div className='container flex flex-col h-full sp mt-10'>
+      {isLoading && <Loading />}
+      {error && <Error error={error.message} />}
       {products && (
-        <div>
+        <div className='flex flex-col h-full '>
           {Object.entries(categoryComponentMap).map(([category, Component]) => (
-          
-            <div key={category}>
-              <SectionTitle
-                title={`${category} Best Sellers`}
-                subtitle="Don't wait any longer and discover other related products"
-              />
-              <div>
+            <div
+              key={category}
+              className='flex flex-col items-center gap-5 my-4'
+            >
+              <SectionTitle title={category} />
+              <GiThreeLeaves className='text-6xl rotate-45 text-blue' />
+              <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-5 w-full h-auto '>
                 {products
                   .filter(
                     (product: productType) => product.category === category

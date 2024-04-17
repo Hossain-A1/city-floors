@@ -2,19 +2,20 @@ import Image from "next/image";
 import SectionTitle from "./SectionTitle";
 import { productType } from "@/types/productsType";
 import React from "react";
+import Review from "../Review";
+import { CurrencyFormatter } from "../CurrencyFormatter";
 
 interface FoodsContainerProps {
   product: productType;
 }
 
 const FoodsContainer: React.FC<FoodsContainerProps> = ({ product }) => {
-  console.log(product)
   return (
     
      
-      <div className='best-products h-full w-full grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5'>
+      <div className="flex flex-col gap-1 ">
         {/* products will come from api */}
-        <div className='lg:h-[15rem] xl:h-[18.5rem] h-full w-full border-4 border-blue border-opacity-5  eq relative  z-20'>
+        <div className='lg:h-[15rem] xl:h-[18.5rem] h-full w-full border-4 bg-dark/5 '>
           <Image
             src={product.images[0]}
             alt='hero image'
@@ -24,10 +25,14 @@ const FoodsContainer: React.FC<FoodsContainerProps> = ({ product }) => {
             className='h-full w-full object-fill'
           />
 
-          <div className='best-sell-modal flex justify-center items-center'>
-            <p>Lorem ipsum dolor sit</p>
-          </div>
+    
         </div>
+        <div className="flex flex-col items-center gap-2.5">
+      <small>{product.category}</small>
+      <h3>{product.title}</h3>
+      <h4>{<Review rate={product}/>}</h4>
+      <b>{<CurrencyFormatter amount={product.price}/>}</b>
+     </div>
       </div>
   
   );

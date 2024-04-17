@@ -1,6 +1,6 @@
 interface SectionTitleProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle }) => {
