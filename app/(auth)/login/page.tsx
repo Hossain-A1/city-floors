@@ -49,7 +49,7 @@ const LoginPage = () => {
     <main className='sp mt-5 container min-h-screen  grid lg:grid-cols-2 grid-cols-1 gap-5'>
       <div className='flex flex-col items-center justify-center gap-5 w-full h-full'>
         <div className='flex flex-col items-center gap-3 w-full '>
-          <h1>Log in to your account.</h1>
+          <h3>Log in to your account.</h3>
           <h6>Welcome back!select method to login: </h6>
 
           <div className='flex w-full h-full lg:flex-row flex-col items-center justify-center gap-5'>

@@ -11,14 +11,13 @@ const Homepage = () => {
     <main className=' flex flex-col gap-20 sp'>
       <HeroSection />
       <Services />
-     <div className="container sp flex flex-col gap-20 ">
-     <ImageHeroSection />
-
-<BestSeller />
-<Features />
-<Products />
-<UserReviews />
-     </div>
+      <ImageHeroSection />
+      <div className='container sp flex flex-col gap-20 '>
+        <BestSeller />
+        <Features />
+        <Products />
+        <UserReviews />
+      </div>
     </main>
   );
 };

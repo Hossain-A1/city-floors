@@ -15,7 +15,7 @@ const BestSeller = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
   const navigate = useRouter()
   return (
-    <div className='h-full w-full flex flex-col'>
+    <div className='h-full w-full flex gap-5 flex-col'>
       <div className='py-5'>
         <SectionTitle
           title='best seller'

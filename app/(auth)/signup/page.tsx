@@ -53,7 +53,7 @@ const SignupPage = () => {
     <main className='sp mt-5 container min-h-screen   items-center  grid lg:grid-cols-2 grid-cols-1 gap-5'>
       <div className='flex  flex-col items-center justify-center gap-5 h-full w-full '>
         <div className='flex flex-col items-center  gap-3 w-full'>
-          <h1>Sugnup to your account.</h1>
+          <h3>Sugnup to your account.</h3>
           <h6>Signup to get more features: </h6>
 
           <div className='flex w-full h-full  lg:flex-row flex-col items-center justify-center  gap-5'>
