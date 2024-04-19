@@ -10,9 +10,11 @@ export const buttonVariants = cva(
         primary: " text-blue border-blue ",
         secondary: " text-light  bg-blue button-modal  hover:border-blue  ",
         danger: "bg-danger text-light  hover:border-danger ",
-        outline: "bg-orange text-white border-orange",
-        orange: "bg-orange text-light font-medium button-modal border hover:border-orange ",
-        deepLight: "bg-blue hover:bg-blue/70 text-light border-none uppercase  ",
+        outline: "border border-blue bg-blue text-light shadow-lg  hover:scale-110",
+        orange:
+          "bg-orange text-light font-medium button-modal border hover:border-orange ",
+        deepLight:
+          "bg-blue hover:bg-blue/70 text-light border-none uppercase  ",
       },
       size: {
         auto: "w-auto",

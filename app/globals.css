@@ -27,10 +27,10 @@ h3 {
   @apply text-2xl lg:text-3xl text-center capitalize font-bold text-black tracking-[0.25em];
 }
 h4 {
-  @apply text-lg font-medium text-wrap text-black;
+  @apply text-lg font-semibold capitalize tracking-wider text-wrap text-black;
 }
-h5{
-  @apply text-lg font-[700] capitalize
+h5 {
+  @apply text-lg font-[700] capitalize;
 }
 p {
   @apply md:text-lg text-[1rem]  text-dark font-[300];
@@ -38,6 +38,10 @@ p {
 
 small {
   @apply text-sm text-black font-medium;
+}
+
+.heading-2 {
+  @apply lg:text-4xl text-2xl text-black font-semibold capitalize;
 }
 
 @keyframes custom-ping {

@@ -18,7 +18,7 @@ const ImageHeroSection = () => {
             className='h-full w-full object-cover '
           />
           <div className='absolute top-5 left-5 right-0 bottom-0 z-10 space-y-5 '>
-            <h1>Sony wireless headphones</h1>
+            <h2 className="heading-2">Sony wireless headphones</h2>
             <p className="max-md:hidden">
               Elevate your audio experience with cutting-edge technology,
               seamless connectivity, and unparalleled comfort.

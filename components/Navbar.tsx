@@ -11,11 +11,18 @@ import { useRouter } from "next/navigation";
 import app from "../firebase/firebase-init";
 import { cn } from "@/lib/utils";
 import Button, { buttonVariants } from "./ui/Button";
+import useProductSearch from "@/hooks/useProductSearch";
+import useFetch from "@/hooks/useFetch";
 
 const Navbar = () => {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const { data: products, error, isLoading } = useFetch("/api/products");
+
+  const { searchQuery, handleSearch, filteredProduct } = useProductSearch(
+    products || []
+  );
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -42,9 +49,6 @@ const Navbar = () => {
     }
   };
 
-  // const { searchQuery, handleSearch, filteredProduct } = useProductSearch(
-  //   data || []
-  // );
   return (
     <nav
       className='fixed top-0 left-0 z-[999] 
@@ -100,8 +104,8 @@ const Navbar = () => {
               <li className='max-lg:hidden relative '>
                 <IoMdSearch className='absolute font-medium text-dark text-2xl  top-2.5 left-1' />
                 <input
-                  // onChange={handleSearch}
-                  // value={searchQuery}
+                  onChange={handleSearch}
+                  value={searchQuery}
                   type='search'
                   placeholder='Search'
                   className='px-8 py-2 rounded outline-none border focus:border-blue text-lg'
@@ -110,7 +114,7 @@ const Navbar = () => {
             </ul>
             {!user ? (
               <ul className='flex   max-lg:flex-col justify-between items-center gap-5'>
-                <li >
+                <li>
                   <Link
                     href='/login'
                     className={cn(
@@ -136,11 +140,7 @@ const Navbar = () => {
             ) : (
               <div className='flex justify-center items-center gap-5'>
                 <div>
-                  <Button
-                 
-                    variant='danger'
-                    onClick={handleSignOut}
-                  >
+                  <Button variant='danger' onClick={handleSignOut}>
                     Logout
                   </Button>
                 </div>

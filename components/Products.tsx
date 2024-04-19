@@ -1,14 +1,11 @@
-import ShopPage from "@/app/shop/page"
-import SectionTitle from "./ui/SectionTitle"
+import ShopPage from "@/app/shop/page";
 
 const Products = () => {
   return (
     <div>
-      <div>
-       <ShopPage/>
-      </div>
+      <ShopPage />
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

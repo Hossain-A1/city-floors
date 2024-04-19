@@ -12,7 +12,7 @@ const Homepage = () => {
       <HeroSection />
       <Services />
       <ImageHeroSection />
-      <div className='container sp flex flex-col gap-20 '>
+      <div className='container sp flex flex-col '>
         <BestSeller />
         <Features />
         <Products />
