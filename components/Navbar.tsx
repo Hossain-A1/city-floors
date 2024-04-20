@@ -97,9 +97,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href='/support' className='font-semibold text-lg'>
+                <span id="support" className='font-semibold text-lg cursor-pointer'>
                   Support
-                </Link>
+                </span>
               </li>
               <li className='max-lg:hidden relative '>
                 <IoMdSearch className='absolute font-medium text-dark text-2xl  top-2.5 left-1' />

@@ -8,11 +8,11 @@ const HeroSection = () => {
       <section className='flex  justify-center h-full w-full items-center gap-10 max-md:flex-col-reverse'>
         <figure className=' md:w-1/2 flex flex-col items-center justify-center h-full w-full'>
           <Image
-            src='https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=600'
+            src='https://t4.ftcdn.net/jpg/02/16/29/61/240_F_216296159_7iqUZn7zRPbNr85VXVTJt1M0Zv1gUo0S.jpg'
             alt='hero image'
             priority
-            height='720'
-            width='1280'
+            height={720}
+            width={1280}
             className='h-full w-full object-fill'
           />
         </figure>

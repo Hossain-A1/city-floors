@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import ImageHeroSection from "@/components/ImageHeroSection";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
+import Support from "@/components/Support";
 import UserReviews from "@/components/UserReviews";
 
 const Homepage = () => {
@@ -18,6 +19,7 @@ const Homepage = () => {
         <Products />
         <UserReviews />
       </div>
+        <Support/>
     </main>
   );
 };
