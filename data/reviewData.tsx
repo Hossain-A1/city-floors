@@ -4,7 +4,7 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Mind-Blowing Excellence",
     comment:
-      "I can confidently say that Arina Spa stands out for its commitment to excellence in service and customer satisfaction.",
+      "CityFloors offers an extensive range of flooring options to suit every taste and budget. I found the perfect hardwood floors for my home and couldn't be happier!",
     photo: "https://randomuser.me/api/portraits/women/68.jpg",
     date: "2023/02/23",
     name: "Adiba jom",
@@ -13,17 +13,17 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Elevate Your Experience",
     comment:
-      "Arina Spa delivered a truly indulgent experience, surpassing my expectations in every way.",
-    photo: "https://randomuser.me/api/portraits/women/80.jpg",
+      " was amazed by the fast shipping and excellent packaging from CityFloors. My laminate flooring arrived in perfect condition, ready for installation",
+    photo: "https://randomuser.me/api/portraits/men/37.jpg",
     date: "2021/01/20",
-    name: "Adrina",
+    name: "jishan",
   },
   {
     icon: <FaStar />,
     title: "Unleash Extraordinary",
     comment:
-      "The attention to detail at Arina Spa made my visit a memorable and deeply rejuvenating experience.",
-    photo: "https://randomuser.me/api/portraits/women/3.jpg",
+      "The customer service at CityFloors is top-notch. They promptly answered all my questions and helped me choose the right flooring for my space",
+    photo: "https://randomuser.me/api/portraits/men/43.jpg",
     date: "2024/06/13",
     name: "Jesica",
   },
@@ -40,7 +40,7 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Mind-Blowing Excellence",
     comment:
-      "My time at Arina Spa was nothing short of exceptional, thanks to their courteous staff and serene atmosphere.",
+      "I appreciate the detailed product descriptions on the CityFloors website. It made it easy for me to compare different options and make an informed decision.",
     photo: "https://randomuser.me/api/portraits/women/56.jpg",
     date: "2024/01/12",
     name: "Rukci",
@@ -49,7 +49,7 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Consistent Perfection",
     comment:
-      "I can confidently say that Arina Spa stands out for its commitment to excellence in service and customer satisfaction.",
+      "The prices at CityFloors are unbeatable. I shopped around extensively and found that they offered the best deals on high-quality flooring",
     photo: "https://randomuser.me/api/portraits/women/75.jpg",
     date: "2023/02/23",
     name: "Alejabeth",
@@ -58,7 +58,7 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Realm of Excellence",
     comment:
-      "My time at Arina Spa was nothing short of exceptional, thanks to their courteous staff and serene atmosphere.",
+      "I love that CityFloors offers eco-friendly flooring options. It's important to me to support companies that prioritize sustainability.",
     photo: "https://randomuser.me/api/portraits/women/31.jpg",
     date: "2023/02/23",
     name: "Olka",
@@ -67,16 +67,16 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Mind-Blowing Excellence",
     comment:
-      "I can confidently say that Arina Spa stands out for its commitment to excellence in service and customer satisfaction.",
-    photo: "https://randomuser.me/api/portraits/women/68.jpg",
+      "CityFloors exceeded my expectations with their quick delivery. I received my vinyl flooring sooner than expected, which was a pleasant surprise.",
+    photo: "https://randomuser.me/api/portraits/men/60.jpg",
     date: "2023/02/23",
-    name: "Nikchi",
+    name: "Ronok",
   },
   {
     icon: <FaStar />,
     title: "Mind-Blowing Excellence",
     comment:
-      "Arina Spa's well-rounded approach to customer care and quality service has made it my go-to destination for relaxation and rejuvenation.",
+      "I'm impressed by the durability of the flooring I purchased from CityFloors. It's holding up well to daily wear and tear in my busy household.",
     photo: "https://randomuser.me/api/portraits/women/94.jpg",
     date: "2023/02/23",
     name: "Sima",
@@ -85,7 +85,7 @@ export const SlideData = [
     icon: <FaStar />,
     title: "Undeniable Brilliance",
     comment:
-      "The exceptional service at Arina Spa truly elevated my spa experience to new heights—I left feeling revitalized and renewed.",
+      "Navigating the CityFloors website was a breeze. I appreciated the intuitive layout and easy-to-use search filters",
     photo: "https://randomuser.me/api/portraits/women/20.jpg",
     date: "2024/05/29",
     name: "Jenifa",

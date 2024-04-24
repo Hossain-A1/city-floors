@@ -9,7 +9,11 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+
+      padding: {
+        DEFAULT: "1rem",
+      md: "2rem",
+      },
       screens: {
         "2xl": "1400px",
       },
@@ -18,8 +22,8 @@ const config: Config = {
       colors: {
         dark: "#333333",
         light: "#FFFFFF",
-        blue: "#6A9739",
-        danger:"#E72929",
+        blue: "#6240C0",
+        danger: "#E72929",
         orange: "#FF7A3D",
         red: "#B40003",
       },

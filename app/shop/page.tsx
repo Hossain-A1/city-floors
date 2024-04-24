@@ -14,9 +14,7 @@ import { GiThreeLeaves } from "react-icons/gi";
 
 const ShopPage = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
-  const {  filteredProduct } = useProductSearch(
-    products || []
-  );
+  const { filteredProduct } = useProductSearch(products || []);
 
   const categoryComponentMap = {
     Foods: FoodsContainer,
@@ -27,16 +25,13 @@ const ShopPage = () => {
   };
 
   return (
-    <div className='container flex flex-col h-full sp mt-10'>
+    <div className=' flex flex-col h-full  mt-10'>
       {isLoading && <Loading />}
       {error && <Error error={error.message} />}
       {products && (
         <div className='flex flex-col h-full '>
           {Object.entries(categoryComponentMap).map(([category, Component]) => (
-            <div
-              key={category}
-              className='flex flex-col items-center  sp'
-            >
+            <div key={category} className='flex flex-col items-center  sp'>
               <SectionTitle title={category} />
               <GiThreeLeaves className='text-6xl rotate-45 text-blue' />
               <div className='grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-10 w-full h-auto  '>

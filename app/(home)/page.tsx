@@ -9,11 +9,11 @@ import UserReviews from "@/components/UserReviews";
 
 const Homepage = () => {
   return (
-    <main className=' flex flex-col gap-20 sp'>
+    <main className=' flex flex-col '>
       <HeroSection />
       <Services />
       <ImageHeroSection />
-      <div className='container sp flex flex-col '>
+      <div className='container gap-20 flex flex-col '>
         <BestSeller />
         <Features />
         <Products />

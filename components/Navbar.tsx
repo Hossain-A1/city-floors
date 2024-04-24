@@ -52,7 +52,7 @@ const Navbar = () => {
   return (
     <nav
       className='fixed top-0 left-0 z-[999] 
-    right-0 lg:h-20 shadow-sm backdrop-blur-xl bg-light/70'
+    right-0 lg:h-20 shadow-sm backdrop-blur-md bg-light/70'
     >
       <div className='container flex  items-center lg:justify-between  w-full h-full max-lg:relative'>
         <div className='max-lg:absolute max-lg:top-0 max-lg:left-0 px-2 max-lg:right-0 max-lg:bg-light/70  border-b  flex justify-between items-center gap-5 w-full h-20 '>

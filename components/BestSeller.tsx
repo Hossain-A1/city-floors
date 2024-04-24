@@ -27,11 +27,11 @@ const BestSeller = () => {
       <div className='best-products h-full w-full grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5'>
         {/* products will come from api */}
         {products &&
-          products.slice(1, 3).map((product: productType) => (
+          products.slice(11, 14).map((product: productType) => (
             <div
-            onClick={()=>navigate.push(`products/${product._id}`)}
+            onClick={()=>navigate.push(`shop/${product._id}`)}
               key={product._id}
-              className='lg:h-[15.5rem] xl:h-[18rem] h-full w-full  eq relative cursor-pointer overflow-hidden z-20'
+              className='lg:h-[18rem] xl:h-[20.5rem]  h-full w-full border-4 border-blue border-opacity-5  eq relative cursor-pointer overflow-hidden  z-20'
             >
               <Image
                 src={product.images[0]}
@@ -43,11 +43,11 @@ const BestSeller = () => {
               />
 
               <div className='best-sell-modal flex gap-5 justify-center items-center'>
-                <button className='p-2  bg-dark rounded-full shadow-md shadow-blue'>
-                  <Heart className='text-red cursor-pointer text-6xl ' />{" "}
+                <button className='p-2  bg-blue rounded-full shadow-md shadow-blue'>
+                  <Heart className='text-light cursor-pointer text-6xl ' />{" "}
                 </button>
-                <button className='p-2 bg-dark rounded-full shadow-md shadow-blue'>
-                  <Eye className='text-red cursor-pointer text-6xl ' />{" "}
+                <button className='p-2 bg-blue rounded-full shadow-md shadow-blue'>
+                  <Eye className='text-light cursor-pointer text-6xl ' />{" "}
                 </button>
               </div>
             </div>
