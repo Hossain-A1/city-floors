@@ -4,7 +4,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { GiThreeLeaves } from "react-icons/gi";
 const HeroSection = () => {
   return (
-    <main className='container md:sp  lg:h-[calc(100vh-5rem)] h-full w-full max-md:mt-10 mt-20 '>
+    <main className='container sp  lg:h-[calc(100vh-5rem)] h-full w-full max-md:mt-10 mt-20 '>
       <section className='flex  justify-center h-full w-full items-center gap-10 max-md:flex-col-reverse'>
         <figure className=' md:w-1/2 flex flex-col items-center justify-center h-full w-full '>
           <Image

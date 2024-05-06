@@ -20,16 +20,13 @@ const Features = () => {
       />
       <div>
         {isLoading && <Loading isLoading={isLoading} />}
-        {error &&(
+        {error && (
           <div>
-             <Error error={error.message} />
-             <h2>Check your internet connection or refesh!</h2>
+            <Error error={error.message} />
+            <h2>Check your internet connection or refesh!</h2>
           </div>
-        )
-        
-        
-        }
-      
+        )}
+
         <div className='best-products h-full w-full grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5'>
           {/* products will come from api */}
           {products &&

@@ -1,13 +1,16 @@
 import { productType } from "@/types/productsType";
 import Image from "next/image";
 import Review from "../Review";
+import Loading from "./Loading";
+
 import { CurrencyFormatter } from "../CurrencyFormatter";
 interface ClothesContainerProps {
   product: productType;
 }
-const ClothesContainer: React.FC<ClothesContainerProps> = ({ product }) => {
+const ClothesContainer: React.FC<ClothesContainerProps> = ({ product}) => {
   return (
     <div className=' flex flex-col gap-1'>
+     
       <div className='lg:h-[15rem] xl:h-[18.5rem] h-full w-full border-4 border-blue border-opacity-5  '>
         <Image
           src={product.images[0]}

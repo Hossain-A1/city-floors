@@ -7,7 +7,7 @@ import { buttonVariants } from "./ui/Button";
 const ImageHeroSection = () => {
   return (
     <div className='container sp'>
-      <div className='flex items-center justify-center max-md:flex-col gap-5 lg:h-[26rem] xl:h-[30rem] md:h-[20rem] h-full w-full lg:overflow-hidden'>
+      <div className='flex items-center justify-center max-md:flex-col gap-5 lg:h-[26rem] xl:h-[30rem] md:h-[20rem] h-full w-full lg:overflow-hidden '>
         <div className=' left h-full w-full  relative z-20 hover:scale-105 eq '>
           <Image
             src='https://t4.ftcdn.net/jpg/03/28/37/93/360_F_328379347_xEKgEB2wkjAJmcqSTmrg4uKxfWrlL7D9.jpg'

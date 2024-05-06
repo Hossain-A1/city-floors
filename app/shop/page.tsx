@@ -1,4 +1,5 @@
 "use client";
+import ShopSlider from "@/components/ShopSlider";
 import ClothesContainer from "@/components/ui/ClothesContainer";
 import ElectronicContainer from "@/components/ui/ElectronicContainer";
 import Error from "@/components/ui/Error";
@@ -16,6 +17,10 @@ const ShopPage = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
   const { filteredProduct } = useProductSearch(products || []);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   const categoryComponentMap = {
     Foods: FoodsContainer,
     Operating: OperatingContainer,
@@ -25,9 +30,10 @@ const ShopPage = () => {
   };
 
   return (
-    <div className=' flex flex-col h-full  mt-10'>
-      {isLoading && <Loading />}
-      {error && <Error error={error.message} />}
+    <div className=' flex flex-col h-full sp '>
+      <div className="h-[100vh] relative ">
+        <ShopSlider />
+      </div>
       {products && (
         <div className='flex flex-col h-full '>
           {Object.entries(categoryComponentMap).map(([category, Component]) => (
@@ -40,7 +46,9 @@ const ShopPage = () => {
                     (product: productType) => product.category === category
                   )
                   .map((product: productType) => (
-                    <Component key={product._id} product={product} />
+                    <div>
+                      <Component key={product._id} product={product} />
+                    </div>
                   ))}
               </div>
             </div>

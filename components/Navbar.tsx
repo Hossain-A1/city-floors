@@ -60,7 +60,11 @@ const Navbar = () => {
             <span className='text-4xl font-extrabold text-orange'>
               <MdOutlineShoppingCartCheckout />
             </span>
-            <Link href='/' className='text-2xl font-extrabold text-blue'>
+            <Link
+              onClick={() => setOpenModal(false)}
+              href='/'
+              className='text-2xl font-extrabold text-blue'
+            >
               CityFloors
             </Link>
           </div>
@@ -92,12 +96,20 @@ const Navbar = () => {
           <div className='max-lg:bg-blue max-lg:eq max-lg:text-light max-lg:h-[100vh] flex max-lg:flex-col   items-center gap-10 lg:justify-between max-lg:origin-left eq max-lg:absolute max-lg:left-0 max-lg:bottom-0 max-lg:top-20 max-lg:right-20 z-[998]'>
             <ul className='flex max-lg:flex-col justify-center items-center gap-5 '>
               <li>
-                <Link href='/shop' className='font-semibold text-lg'>
+                <Link
+                  href='/shop'
+                  onClick={() => setOpenModal(false)}
+                  className='font-semibold text-lg'
+                >
                   Shop
                 </Link>
               </li>
               <li>
-                <span id="support" className='font-semibold text-lg cursor-pointer'>
+                <span
+                  onClick={() => setOpenModal(false)}
+                  id='support'
+                  className='font-semibold text-lg cursor-pointer'
+                >
                   Support
                 </span>
               </li>
@@ -116,6 +128,7 @@ const Navbar = () => {
               <ul className='flex   max-lg:flex-col justify-between items-center gap-5'>
                 <li>
                   <Link
+                    onClick={() => setOpenModal(false)}
                     href='/login'
                     className={cn(
                       buttonVariants({ variant: "secondary" }),
@@ -127,6 +140,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
+                    onClick={() => setOpenModal(false)}
                     href='/signup'
                     className={cn(
                       buttonVariants({ variant: "orange" }),

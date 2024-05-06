@@ -9,7 +9,7 @@ import UserReviews from "@/components/UserReviews";
 
 const Homepage = () => {
   return (
-    <main className=' flex flex-col '>
+    <main className=' '>
       <HeroSection />
       <Services />
       <ImageHeroSection />

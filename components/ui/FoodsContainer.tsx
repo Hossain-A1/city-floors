@@ -14,6 +14,7 @@ interface FoodsContainerProps {
 const FoodsContainer: React.FC<FoodsContainerProps> = ({ product }) => {
   return (
     <div className='flex flex-col gap-1 '>
+      
       {/* products will come from api */}
       <Link
         href={`/shop/${product._id}`}

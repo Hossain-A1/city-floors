@@ -20,14 +20,13 @@ const SprotsContainer: React.FC<SprotsContainerProps> = ({ product }) => {
           width='1280'
           className='h-full w-full object-fill'
         />
-
       </div>
-        <div className='flex flex-col items-center gap-2.5'>
-          <small>{product.category}</small>
-          <h3>{product.title}</h3>
-          <h4>{<Review rate={product} />}</h4>
-          <span>{<CurrencyFormatter amount={product.price} />}</span>
-        </div>
+      <div className='flex flex-col items-center gap-2.5'>
+        <small>{product.category}</small>
+        <h3>{product.title}</h3>
+        <h4>{<Review rate={product} />}</h4>
+        <span>{<CurrencyFormatter amount={product.price} />}</span>
+      </div>
     </div>
   );
 };

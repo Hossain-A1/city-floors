@@ -1,24 +1,24 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Review from "@/components/Review";
 import { CurrencyFormatter } from "@/components/CurrencyFormatter";
 import { buttonVariants } from "@/components/ui/Button";
 import { productType } from "@/types/productsType";
-import { Podcast } from "lucide-react";
 interface FoodsContainerProps {
   product: productType;
 }
 const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
+  const [changeImage, setChangeImage] = useState(product.images[0]);
   return (
     <div className='space-y-20'>
-      <div className='flex flex-row justify-center items-start gap-8 py-10 px-20 bg-dark/5 bg-opacity-5 '>
+      <div className='flex lg:flex-row flex-col justify-center items-start gap-8 py-10 lg:px-20 bg-dark/5 bg-opacity-5 '>
         {/* Product Image */}
-        <div className=' '>
-          <figure className='lg:h-[35rem] lg:w-[35rem] h-full w-full '>
+        <div className='space-y-5'>
+          <figure className='lg:h-[30rem] lg:w-[35rem] h-[15rem] w-full  overflow-hidden'>
             <Image
-              src={product.images[0]}
+              src={changeImage}
               alt='Product Image'
               priority
               height={720}
@@ -26,6 +26,24 @@ const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
               className='object-fill h-full w-full'
             />
           </figure>
+          <div className='flex items-center gap-5'>
+            {product.images.map((image, i) => (
+              <figure
+                key={i}
+                className='lg:h-[5rem] lg:w-[5rem] h-full w-full '
+              >
+                <Image
+                  onClick={() => setChangeImage(image)}
+                  src={image}
+                  alt='Product Image'
+                  priority
+                  height={720}
+                  width={1280}
+                  className='object-fill h-full w-full cursor-pointer'
+                />
+              </figure>
+            ))}
+          </div>
         </div>
 
         {/* Product Details */}

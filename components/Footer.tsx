@@ -3,11 +3,13 @@ import Link from "next/link";
 import { FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
-    <footer>
-      <div className='bg-blue/30 w-full py-3 hover:bg-blue/40 eq flex items-center justify-center '>
-        <button onClick={() => window.scrollTo(0, 0)}>Back to Top</button>
+    <footer className='bg-black py-10 px-20 min-h-screen'>
+      <div className='bg-blue/30 w-full py-3 hover:bg-blue/40 eq flex items-center justify-center mb-10'>
+        <button onClick={() => window.scrollTo(0, 0)} className='text-light'>
+          Back to Top
+        </button>
       </div>
-      <div className='grid grid-cols-3 max-lg:grid-cols-1 gap-5 bg-blue text-light p-5'>
+      <div className='grid grid-cols-3 max-lg:grid-cols-1 gap-5 text-light py-20 '>
         <div className='flex flex-col items-center p-10'>
           <div>
             <span className='text-6xl  font-semibold'>#</span>
@@ -24,23 +26,23 @@ const Footer = () => {
               Quick Links
             </h2>
             <li className=''>
-              <Link href='/' className='l text-sm'>
+              <Link href='/' className=' text-xl font-semibold'>
                 Home
               </Link>
             </li>
 
             <li className=''>
-              <Link href='/about-us' className=' text-sm'>
+              <Link href='/about-us' className=' text-xl font-semibold'>
                 About
               </Link>
             </li>
             <li className=''>
-              <Link href='/drones-page' className=' text-sm'>
+              <Link href='/drones-page' className=' text-xl font-semibold'>
                 Drones
               </Link>
             </li>
             <li className=''>
-              <Link href='/offers' className=' text-sm'>
+              <Link href='/offers' className=' text-xl font-semibold'>
                 Offers
               </Link>
             </li>
@@ -51,22 +53,22 @@ const Footer = () => {
               company
             </h2>
             <li className=''>
-              <Link href='/about' className=' text-sm'>
+              <Link href='/about' className=' text-xl font-semibold'>
                 About
               </Link>
             </li>
             <li className=''>
-              <Link href='/about' className=' text-sm'>
+              <Link href='/about' className=' text-xl font-semibold'>
                 Galleries
               </Link>
             </li>
             <li className=''>
-              <Link href='/support' className=' text-sm'>
+              <Link href='/support' className=' text-xl font-semibold'>
                 Support
               </Link>
             </li>
             <li className=''>
-              <Link href='/login' className=' text-sm'>
+              <Link href='/login' className=' text-xl font-semibold'>
                 login
               </Link>
             </li>
@@ -76,13 +78,13 @@ const Footer = () => {
               {" "}
               LEGAL
             </h2>
-            <Link href='#' className='text-sm'>
+            <Link href='#' className='text-xl font-semibold'>
               Terms of use
             </Link>
-            <Link href='#' className='text-sm'>
+            <Link href='#' className='text-xl font-semibold'>
               Privacy policy
             </Link>
-            <Link href='#' className='text-sm'>
+            <Link href='#' className='text-xl font-semibold'>
               Cookie policy
             </Link>
           </div>
