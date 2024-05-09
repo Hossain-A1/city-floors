@@ -6,6 +6,7 @@ import Review from "@/components/Review";
 import { CurrencyFormatter } from "@/components/CurrencyFormatter";
 import { buttonVariants } from "@/components/ui/Button";
 import { productType } from "@/types/productsType";
+import RelatedProducts from "./ui/RelatedProducts";
 interface FoodsContainerProps {
   product: productType;
 }
@@ -59,15 +60,23 @@ const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
                 <CurrencyFormatter amount={product.price} />
               </b>
               <small> + free shopping</small>
+              
             </div>
+            <small className="text-blue font-semibold">In Stock ({product.stock})</small><br />
             <small className='text-lg font-extralight'>
               {product.description}
             </small>
           </div>
 
-          <div className='flex items-center justify-center gap-2.5'>
-            {/* Add to Cart Button */}
-            <button>+</button>
+          <div className='flex items-center justify-center gap-10'>
+            <select id='cars' className='p-2.5'>
+              {[...Array(100)].map((_, index) => (
+                <option key={index + 1} value={index + 1}>
+                  {index + 1}
+                </option>
+              ))}
+            </select>
+
             <Link
               href={`/shop/${product._id}`}
               className={cn(
@@ -91,7 +100,9 @@ const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
         </div>
       </div>
 
-      <div className='related-products'></div>
+      <div className='related-products'>
+        <RelatedProducts />
+      </div>
     </div>
   );
 };

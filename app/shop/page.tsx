@@ -15,7 +15,6 @@ import { GiThreeLeaves } from "react-icons/gi";
 
 const ShopPage = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
-  const { filteredProduct } = useProductSearch(products || []);
 
   if (isLoading) {
     return <Loading />;
@@ -31,7 +30,7 @@ const ShopPage = () => {
 
   return (
     <div className=' flex flex-col h-full sp '>
-      <div className="h-[100vh] relative ">
+      <div className="lg:h-[50vh] h-[100vh] w-full relative ">
         <ShopSlider />
       </div>
       {products && (

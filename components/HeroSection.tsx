@@ -1,7 +1,9 @@
 import Image from "next/image";
-import Button from "./ui/Button";
+import Button, { buttonVariants } from "./ui/Button";
 import { FaCartArrowDown } from "react-icons/fa";
 import { GiThreeLeaves } from "react-icons/gi";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 const HeroSection = () => {
   return (
     <main className='container sp  lg:h-[calc(100vh-5rem)] h-full w-full max-md:mt-10 mt-20 '>
@@ -34,14 +36,18 @@ const HeroSection = () => {
             available through our user-friendly online shop.
           </p>
           <div>
-            <Button variant='deepLight'>
-              <div className='flex justify-center items-center gap-2.5'>
-                <span>
-                  <FaCartArrowDown className='text-lg' />{" "}
-                </span>
-                shope now
-              </div>
-            </Button>
+            <Link
+              href='/shop'
+              className={cn(
+                buttonVariants({ variant: "secondary" }),
+                "flex justify-center items-center gap-2.5"
+              )}
+            >
+              <span>
+                <FaCartArrowDown className='text-lg' />{" "}
+              </span>
+              shope now
+            </Link>
           </div>
         </div>
       </section>

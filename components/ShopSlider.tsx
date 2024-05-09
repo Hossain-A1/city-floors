@@ -39,23 +39,23 @@ const ShopSlider = () => {
           className='mySwiper bg-black h-full w-full'
         >
           {shopData.map((data) => (
-            <div className="h-full w-full ">
+            <div className='h-full w-full '>
               <SwiperSlide key={data.id} className='h-full w-full relative'>
-              <div className='h-full w-full'>
-                <Image
-                  src={data.photo}
-                  alt={data.title}
-                  height='1020'
-                  width='2400'
-                  className='h-full w-full object-cover'
-                  priority
-                />
-              </div>
-              <div className='absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2'>
-                <h3>{data.title}</h3>
-                <p className='text-center'>{data.comment}</p>
-              </div>
-            </SwiperSlide>
+                <div className='h-full w-full'>
+                  <Image
+                    src={data.photo}
+                    alt={data.title}
+                    height='1020'
+                    width='2400'
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </div>
+                <div className='absolute top-1/2 -translate-y-1/2 left-1/2 transform -translate-x-1/2'>
+                  <h3>{data.title}</h3>
+                  <p className='text-center'>{data.comment}</p>
+                </div>
+              </SwiperSlide>
             </div>
           ))}
         </Swiper>

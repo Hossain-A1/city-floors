@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { FaFacebookF, FaYoutube, FaTwitter } from "react-icons/fa";
+import { GiThreeLeaves } from "react-icons/gi";
 const Footer = () => {
   return (
     <footer className='bg-black py-10 px-20 min-h-screen'>
@@ -9,88 +10,71 @@ const Footer = () => {
           Back to Top
         </button>
       </div>
-      <div className='grid grid-cols-3 max-lg:grid-cols-1 gap-5 text-light py-20 '>
-        <div className='flex flex-col items-center p-10'>
-          <div>
-            <span className='text-6xl  font-semibold'>#</span>
-            <h2>
-              SKYWHAKFORGE <br />
-              Providing reliable drones since 2002
-            </h2>
+      <div className='grid grid-cols-2 lg:grid-cols-3 gap-5 text-light py-20 items-center'>
+        <div className='flex flex-col items-center'>
+          <div className='flex flex-col gap-2.5 items-center justify-center '>
+            <span className='text-6xl  font-semibold'>
+              {" "}
+              <GiThreeLeaves className='text-6xl rotate-45 text-blue' />
+            </span>
+            <h1 className='text-light '>Cityfloors store</h1>
+            <p className='text-light'>
+              {" "}
+              CityFloors: Your one-stop e-commerce shop for premium home
+              flooring solutions. Explore a wide array of options, from hardwood
+              to carpeting, all with seamless navigation and top-notch customer
+              service.
+            </p>
           </div>
         </div>
 
         <div className='flex max-lg:flex-col max-lg:justify-center justify-around gap-10 col-span-2'>
           <ul className='flex flex-col gap-3 items-center  '>
-            <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
+            <h2 className='text-2xl text-light/60 font-semibold underline underline-offset-4 capitalize mt-10 mb-10'>
               Quick Links
             </h2>
             <li className=''>
-              <Link href='/' className=' text-xl font-semibold'>
-                Home
+              <Link href='/shop' className=' text-xl '>
+                Shop
               </Link>
             </li>
 
             <li className=''>
-              <Link href='/about-us' className=' text-xl font-semibold'>
-                About
-              </Link>
-            </li>
-            <li className=''>
-              <Link href='/drones-page' className=' text-xl font-semibold'>
-                Drones
-              </Link>
-            </li>
-            <li className=''>
-              <Link href='/offers' className=' text-xl font-semibold'>
-                Offers
-              </Link>
-            </li>
-          </ul>
-
-          <ul className='flex flex-col gap-3 items-center  '>
-            <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
-              company
-            </h2>
-            <li className=''>
-              <Link href='/about' className=' text-xl font-semibold'>
-                About
-              </Link>
-            </li>
-            <li className=''>
-              <Link href='/about' className=' text-xl font-semibold'>
-                Galleries
-              </Link>
-            </li>
-            <li className=''>
-              <Link href='/support' className=' text-xl font-semibold'>
+              <Link href='/#support' className=' text-xl'>
                 Support
               </Link>
             </li>
             <li className=''>
-              <Link href='/login' className=' text-xl font-semibold'>
-                login
+              <Link href='/login' className=' text-xl '>
+                Login
+              </Link>
+            </li>
+            <li className=''>
+              <Link href='/signup' className=' text-xl '>
+                Sign-up
               </Link>
             </li>
           </ul>
+
+          
           <div className='flex flex-col items-center gap-5'>
-            <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
+            <h2 className='text-2xl text-light/60 font-semibold underline underline-offset-4 capitalize mt-10 mb-10'>
               {" "}
               LEGAL
             </h2>
-            <Link href='#' className='text-xl font-semibold'>
+            <Link href='#' className='text-xl'>
               Terms of use
             </Link>
-            <Link href='#' className='text-xl font-semibold'>
+            <Link href='#' className='text-xl'>
               Privacy policy
             </Link>
-            <Link href='#' className='text-xl font-semibold'>
+            <Link href='#' className='text-xl'>
               Cookie policy
             </Link>
           </div>
 
           <div className='social text-light flex flex-col items-center gap-5'>
-            <h2 className='text-md text-light/60 font-semibold underline underline-offset-4 uppercase'>
+            <h2 className='text-2xl text-light/60 font-semibold underline underline-offset-4 capitalize mt-10 mb-10'>
               Social
             </h2>
 

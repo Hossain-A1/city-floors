@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 const BestSeller = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
-  const navigate = useRouter()
+  const navigate = useRouter();
   return (
     <div className='h-full w-full flex gap-5 flex-col'>
       <div className='py-5'>
@@ -29,7 +29,7 @@ const BestSeller = () => {
         {products &&
           products.slice(11, 14).map((product: productType) => (
             <div
-            onClick={()=>navigate.push(`shop/${product._id}`)}
+              onClick={() => navigate.push(`shop/${product._id}`)}
               key={product._id}
               className='lg:h-[18rem] xl:h-[20.5rem]  h-full w-full border-4 border-blue border-opacity-5  eq relative cursor-pointer overflow-hidden  z-20'
             >

@@ -93,7 +93,7 @@ const Navbar = () => {
         </div>
 
         <div className={`${!openModal ? "max-lg:hidden" : "visible eq"}`}>
-          <div className='max-lg:bg-blue max-lg:eq max-lg:text-light max-lg:h-[100vh] flex max-lg:flex-col   items-center gap-10 lg:justify-between max-lg:origin-left eq max-lg:absolute max-lg:left-0 max-lg:bottom-0 max-lg:top-20 max-lg:right-20 z-[998]'>
+          <div className='max-lg:bg-blue max-lg:eq max-lg:text-light max-lg:h-[100vh] flex max-lg:flex-col   items-center gap-10 lg:justify-between max-lg:origin-left eq max-lg:absolute max-lg:left-0 max-lg:bottom-0 max-lg:top-20 max-lg:right-20 z-[998] h-full max-lg:justify-center max-lg:items-center'>
             <ul className='flex max-lg:flex-col justify-center items-center gap-5 '>
               <li>
                 <Link
@@ -105,27 +105,26 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <span
+                <Link
+                  href='#support'
                   onClick={() => setOpenModal(false)}
-                  id='support'
                   className='font-semibold text-lg cursor-pointer'
                 >
                   Support
-                </span>
+                </Link>
               </li>
-              <li className='max-lg:hidden relative '>
-                <IoMdSearch className='absolute font-medium text-dark text-2xl  top-2.5 left-1' />
-                <input
-                  onChange={handleSearch}
-                  value={searchQuery}
-                  type='search'
-                  placeholder='Search'
-                  className='px-8 py-2 rounded outline-none border focus:border-blue text-lg'
-                />
+              <li>
+                <Link
+                  href='#'
+                  onClick={() => setOpenModal(false)}
+                  className='font-semibold text-lg cursor-pointer'
+                >
+                  💗
+                </Link>
               </li>
             </ul>
             {!user ? (
-              <ul className='flex   max-lg:flex-col justify-between items-center gap-5'>
+              <ul className='flex   max-lg:flex-col  items-center gap-5 '>
                 <li>
                   <Link
                     onClick={() => setOpenModal(false)}
