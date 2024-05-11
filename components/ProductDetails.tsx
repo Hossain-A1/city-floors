@@ -93,10 +93,10 @@ const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
         <hr />
         <div className=''>
           <div className='flex gap-5'>
-            <h2>Description</h2>
-            <h2>Reviews {product.rating}</h2>
+            <b>Description</b>
+            <b>Reviews {product.rating}</b>
           </div>
-          <b>{product.description}</b>
+          <small>{product.description}</small>
         </div>
       </div>
 

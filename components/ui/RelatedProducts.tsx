@@ -11,9 +11,10 @@ const RelatedProducts = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
   return (
     <div>
-      <div className="flex flex-wrap gap-5">
+      <h1>Related products</h1>
+      <div className='lg:flex lg:flex-row lg:flex-wrap flex-col gap-5 pt-10 h-full w-full'>
         {products &&
-          products.slice(13,17).map((product: productType) => (
+          products.slice(13, 17).map((product: productType) => (
             <div key={product._id}>
               {/* products will come from api */}
               <Link

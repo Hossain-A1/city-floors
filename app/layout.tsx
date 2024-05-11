@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
+import ReduxProvider from "@/provider/ReduxProvider";
 
 const sora = Roboto({
   subsets: ["latin"],
@@ -24,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={cn(sora.className, "bg-light text-black  ")}>
-        <Toaster />
+      <ReduxProvider>
+      <Toaster />
         <Navbar />
         {children}
         <Footer />
+      </ReduxProvider>
       </body>
     </html>
   );
