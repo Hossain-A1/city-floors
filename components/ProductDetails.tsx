@@ -14,7 +14,13 @@ interface FoodsContainerProps {
 }
 const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
   const [changeImage, setChangeImage] = useState(product.images[0]);
-  const dispatch = useDispatch()
+
+  const [selectedOption, setSelectedOption] = useState<number>(1); // Initial selected option value
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(parseInt(event.target.value)); // Update selected option value
+  };
+  const dispatch = useDispatch();
   return (
     <div className='space-y-20'>
       <div className='flex lg:flex-row flex-col justify-center items-start gap-8 py-10 lg:px-20 bg-dark/5 bg-opacity-5 '>
@@ -63,33 +69,42 @@ const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
                 <CurrencyFormatter amount={product.price} />
               </b>
               <small> + free shopping</small>
-              
             </div>
-            <small className="text-blue font-semibold">In Stock ({product.stock})</small><br />
+            <small className='text-blue font-semibold'>
+              In Stock ({product.stock})
+            </small>
+            <br />
             <small className='text-lg font-extralight'>
               {product.description}
             </small>
           </div>
 
           <div className='flex items-center justify-center gap-10'>
-            <select id='cars' className='p-2.5'>
+            <select
+              id='cars'
+              className='p-2.5'
+              onChange={handleSelectChange}
+              value={selectedOption}
+            >
               {[...Array(100)].map((_, index) => (
-                <option key={index + 1} value={index + 1}>
-                  {index + 1}
+                <option key={index + 1} value={index }>
+                  {index}
                 </option>
               ))}
             </select>
 
             <Link
-                  onClick={() => dispatch(addToCart({ ...product, count: 1 }))}
-                  href={"/cart"}
-                  className={cn(
-                    buttonVariants({ variant: "secondary", size: "full" }),
-                    "text-center w-full"
-                  )}
-                >
-                  Add to Cart
-                </Link>
+              onClick={() =>
+                dispatch(addToCart({ ...product, count: selectedOption }))
+              }
+              href={"/cart"}
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "full" }),
+                "text-center w-full"
+              )}
+            >
+              Add to Cart
+            </Link>
           </div>
         </div>
       </div>

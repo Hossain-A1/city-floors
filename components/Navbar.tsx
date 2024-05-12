@@ -5,24 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { BsCart4 } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import app from "../firebase/firebase-init";
 import { cn } from "@/lib/utils";
 import Button, { buttonVariants } from "./ui/Button";
-import useProductSearch from "@/hooks/useProductSearch";
 import useFetch from "@/hooks/useFetch";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 const Navbar = () => {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const { data: products, error, isLoading } = useFetch("/api/products");
 
-  const { searchQuery, handleSearch, filteredProduct } = useProductSearch(
-    products || []
-  );
+  const { cartItems } = useSelector((state: RootState) => state.cart);
+  
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -117,18 +117,20 @@ const Navbar = () => {
                 <Link
                   href='#'
                   onClick={() => setOpenModal(false)}
-                  className='font-semibold text-lg cursor-pointer'
+                  
                 >
-                  💗
+                  < FaRegHeart className='font-semibold text-lg  cursor-pointer'/>
                 </Link>
               </li>
               <li>
                 <Link
                   href='/cart'
                   onClick={() => setOpenModal(false)}
+                  className="relative"
                  
                 >
-                  <BsCart4  className='font-semibold text-2xl cursor-pointer' />
+                  <span className="absolute left-4 -top-4 w-5 bg-orange text-light text-center rounded-full">{cartItems.length}</span>
+                  <BsCart4  className='font-semibold text-dark text-xl cursor-pointer' />
                 </Link>
               </li>
             </ul>

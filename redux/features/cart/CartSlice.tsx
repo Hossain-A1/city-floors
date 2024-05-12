@@ -21,7 +21,7 @@ const cartSlice = createSlice({
         state.cartItems[existedItemIndex].count += 1;
       } else {
         // add to cart
-        const assembled = { ...action.payload, count: 1 };
+        const assembled = { ...action.payload };
         state.cartItems.push(assembled);
         toast.success("Item added Successfully!");
       }
