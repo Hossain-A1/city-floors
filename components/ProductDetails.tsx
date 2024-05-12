@@ -7,11 +7,14 @@ import { CurrencyFormatter } from "@/components/CurrencyFormatter";
 import { buttonVariants } from "@/components/ui/Button";
 import { productType } from "@/types/productsType";
 import RelatedProducts from "./ui/RelatedProducts";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/features/cart/CartSlice";
 interface FoodsContainerProps {
   product: productType;
 }
 const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
   const [changeImage, setChangeImage] = useState(product.images[0]);
+  const dispatch = useDispatch()
   return (
     <div className='space-y-20'>
       <div className='flex lg:flex-row flex-col justify-center items-start gap-8 py-10 lg:px-20 bg-dark/5 bg-opacity-5 '>
@@ -78,13 +81,15 @@ const ProductDetails: React.FC<FoodsContainerProps> = ({ product }) => {
             </select>
 
             <Link
-              href={`/shop/${product._id}`}
-              className={cn(
-                buttonVariants({ variant: "outline", size: "full" })
-              )}
-            >
-              Add to Cart
-            </Link>
+                  onClick={() => dispatch(addToCart({ ...product, count: 1 }))}
+                  href={"/cart"}
+                  className={cn(
+                    buttonVariants({ variant: "secondary", size: "full" }),
+                    "text-center w-full"
+                  )}
+                >
+                  Add to Cart
+                </Link>
           </div>
         </div>
       </div>

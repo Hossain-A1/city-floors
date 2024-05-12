@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged, User, signOut } from "firebase/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
-import { IoMdSearch } from "react-icons/io";
+import { BsCart4 } from "react-icons/bs";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -120,6 +120,15 @@ const Navbar = () => {
                   className='font-semibold text-lg cursor-pointer'
                 >
                   💗
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='/cart'
+                  onClick={() => setOpenModal(false)}
+                 
+                >
+                  <BsCart4  className='font-semibold text-2xl cursor-pointer' />
                 </Link>
               </li>
             </ul>
