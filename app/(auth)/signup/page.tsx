@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { userLoginPost } from "@/lib/userLoginPost";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { login } from "@/redux/features/auth/authSlice";
 interface SignUpFormData {
   name: string;
   email: string;
@@ -26,6 +28,7 @@ const SignupPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const router = useRouter();
+  const dispatch = useDispatch()
   const handleSubmit = useCallback(
     async (e: React.SyntheticEvent) => {
       e.preventDefault();
@@ -40,13 +43,14 @@ const SignupPage = () => {
           email: "",
           password: "",
         });
+        dispatch(login(data))
         toast.success("Register successfull");
         router.push("/");
       } else {
         setLoading(false);
       }
     },
-    [formData, router]
+    [formData, router,dispatch]
   );
 
   return (

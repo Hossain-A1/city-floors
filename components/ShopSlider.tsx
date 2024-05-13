@@ -39,8 +39,8 @@ const ShopSlider = () => {
           className='mySwiper bg-black h-full w-full'
         >
           {shopData.map((data) => (
-            <div className='h-full w-full '>
-              <SwiperSlide key={data.id} className='h-full w-full relative'>
+            <div className='h-full w-full '  key={data.id}>
+              <SwiperSlide className='h-full w-full relative'>
                 <div className='h-full w-full'>
                   <Image
                     src={data.photo}
@@ -60,6 +60,7 @@ const ShopSlider = () => {
           ))}
         </Swiper>
       </div>
+      
     </main>
   );
 };

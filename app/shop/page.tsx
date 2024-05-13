@@ -9,16 +9,11 @@ import OperatingContainer from "@/components/ui/OparatingContainer";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SportsContainer from "@/components/ui/SprotsContainer";
 import useFetch from "@/hooks/useFetch";
-import useProductSearch from "@/hooks/useProductSearch";
 import { productType } from "@/types/productsType";
 import { GiThreeLeaves } from "react-icons/gi";
 
 const ShopPage = () => {
   const { data: products, error, isLoading } = useFetch("/api/products");
-
-  if (isLoading) {
-    return <Loading />;
-  }
 
   const categoryComponentMap = {
     Foods: FoodsContainer,
@@ -30,7 +25,16 @@ const ShopPage = () => {
 
   return (
     <div className=' flex flex-col h-full sp '>
-      <div className="lg:h-[50vh] h-[100vh] w-full relative ">
+      {isLoading && <Loading isLoading={isLoading} />}
+      {error && (
+        <div>
+          <Error error={error.message} />
+          <h2 className='text-blue'>
+            Check your internet connection or refesh!
+          </h2>
+        </div>
+      )}
+      <div className='lg:h-[50vh] h-[100vh] w-full relative '>
         <ShopSlider />
       </div>
       {products && (
@@ -45,9 +49,7 @@ const ShopPage = () => {
                     (product: productType) => product.category === category
                   )
                   .map((product: productType) => (
-                    <div>
-                      <Component key={product._id} product={product} />
-                    </div>
+                    <Component key={product._id} product={product} />
                   ))}
               </div>
             </div>

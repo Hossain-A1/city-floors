@@ -23,7 +23,7 @@ const Features = () => {
         {error && (
           <div>
             <Error error={error.message} />
-            <h2>Check your internet connection or refesh!</h2>
+            <h2 className="text-blue">Check your internet connection or refesh!</h2>
           </div>
         )}
 

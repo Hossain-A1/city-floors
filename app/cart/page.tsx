@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "../../components/CartItem";
@@ -24,8 +24,8 @@ const CartPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (cartItems.length <0) {
-      router.push('/shop'); // Redirect to shopping page if cart is empty
+    if (cartItems.length < 0) {
+      router.push("/shop"); // Redirect to shopping page if cart is empty
     }
   }, [cartItems, router]);
 
@@ -85,12 +85,17 @@ const CartPage = () => {
     <main className='container sp mt-10 space-y-5 min-h-screen'>
       <div className='text-2xl font-semibold uppercase text-center'>
         {cartItems.length > 0 ? (
-          `You've added (${cartItems.length}) product${cartItems.length > 1 ? 's' : ''}`
+          `You've added (${cartItems.length}) product${
+            cartItems.length > 1 ? "s" : ""
+          }`
         ) : (
           <div className='flex flex-col items-center gap-10'>
             Cart is empty
             <h4>
-              <Link href='/shop' className={cn(buttonVariants({ variant: "outline" }))}>
+              <Link
+                href='/shop'
+                className={cn(buttonVariants({ variant: "outline" }))}
+              >
                 Go to Shopping
               </Link>
             </h4>
@@ -126,12 +131,21 @@ const CartPage = () => {
                   </button>
                 </div>
                 <div className='flex justify-end items-center whitespace-normal'>
-                  <p>Taxes are already added to the displayed price of our product.</p>
+                  <p>
+                    Taxes are already added to the displayed price of our
+                    product.
+                  </p>
                 </div>
-                <div className='flex justify-center lg:gap-10 gap-1 items-center'>
-                  <Link href='/shop' className={cn(buttonVariants({ variant: "outline" }))}>
+                <div className='lg:flex  max-md:flex-col justify-center gap-10  items-center'>
+                  <Link
+                    href='/shop'
+                    className={cn(
+                      buttonVariants({ variant: "outline", size: "full" })
+                    )}
+                  >
                     Back to Shopping
                   </Link>
+
                   <Button
                     onClick={handlePayment}
                     variant='secondary'

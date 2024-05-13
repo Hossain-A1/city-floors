@@ -6,23 +6,23 @@ import Link from "next/link";
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { BsCart4 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
-
+import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import app from "../firebase/firebase-init";
 import { cn } from "@/lib/utils";
 import Button, { buttonVariants } from "./ui/Button";
-import useFetch from "@/hooks/useFetch";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import { logout } from "@/redux/features/auth/authSlice";
 
 const Navbar = () => {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
-
+  const dispatch = useDispatch();
   const { cartItems } = useSelector((state: RootState) => state.cart);
-  
+  const { userAndToken } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -43,7 +43,8 @@ const Navbar = () => {
     const auth = getAuth(app);
     try {
       await signOut(auth);
-      router.push("/login");
+      router.push('/login')
+      toast.success('Logout!')
     } catch (error) {
       console.error("Error signing out:", error);
     }
@@ -114,27 +115,24 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href='#'
-                  onClick={() => setOpenModal(false)}
-                  
-                >
-                  < FaRegHeart className='font-semibold text-lg  cursor-pointer'/>
+                <Link href='#' onClick={() => setOpenModal(false)}>
+                  <FaRegHeart className='font-semibold text-lg  cursor-pointer' />
                 </Link>
               </li>
               <li>
                 <Link
                   href='/cart'
                   onClick={() => setOpenModal(false)}
-                  className="relative"
-                 
+                  className='relative'
                 >
-                  <span className="absolute left-4 -top-4 w-5 bg-orange text-light text-center rounded-full">{cartItems.length}</span>
-                  <BsCart4  className='font-semibold text-dark text-xl cursor-pointer' />
+                  <span className='absolute font-bold left-4 -top-4 w-5 bg-orange text-light text-center rounded-full'>
+                    {cartItems.length}
+                  </span>
+                  <BsCart4 className='font-semibold text-dark max-lg:text-light text-xl cursor-pointer' />
                 </Link>
               </li>
             </ul>
-            {!user ? (
+            {!user && !userAndToken?.user ? (
               <ul className='flex   max-lg:flex-col  items-center gap-5 '>
                 <li>
                   <Link
@@ -163,12 +161,19 @@ const Navbar = () => {
               </ul>
             ) : (
               <div className='flex justify-center items-center gap-5'>
-                <div>
-                  <Button variant='danger' onClick={handleSignOut}>
-                    Logout
-                  </Button>
+                <div onClick={() => setOpenModal(false)}>
+                  {user && (
+                    <Button variant='danger' onClick={handleSignOut}>
+                      Logout
+                    </Button>
+                  )}
+                  {userAndToken?.user && (
+                    <Button variant='danger' onClick={() => dispatch(logout())}>
+                      Logout
+                    </Button>
+                  )}
                 </div>
-                {user.photoURL && (
+                {user?.photoURL && !userAndToken?.user && (
                   <figure className='h-14 w-14 rounded-full overflow-hidden'>
                     <Image
                       src={user.photoURL}
@@ -182,6 +187,8 @@ const Navbar = () => {
                 )}
               </div>
             )}
+
+            {userAndToken?.user && <b>{userAndToken.user.email}</b>}
           </div>
         </div>
       </div>

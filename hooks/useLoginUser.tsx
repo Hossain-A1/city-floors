@@ -9,22 +9,22 @@ import {
 import app from "../firebase/firebase-init";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 const useLoginUser = () => {
   const navigate = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleNameChange = (e) => {
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
-  const emailHaldleChange = (e) => {
+  const emailHaldleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const passHanldeChange = (e) => {
+  const passHanldeChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 

@@ -13,7 +13,7 @@ const Support = () => {
     router.push("/");
   };
   return (
-    <main id='support' className='sp bg-dark/5 bg-opacity-10 space-y-5'>
+    <main id='support' className='sp bg-dark/5 bg-opacity-10 space-y-5 px-5'>
       <div>
         <SectionTitle title='unlimited support' />
       </div>

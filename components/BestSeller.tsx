@@ -54,7 +54,7 @@ const BestSeller = () => {
           ))}
       </div>
 
-      <div className='lg:h-1/2 h-[20rem] w-full overflow-hidden relative z-20 hover:scale-105 eq '>
+      <div className='lg:h-1/2 h-[36rem] w-full overflow-hidden relative z-20 hover:scale-105 eq '>
         <Image
           src='https://t3.ftcdn.net/jpg/03/81/20/92/240_F_381209299_b9mNonInK8iQSkCikCVWRCheYcYfnHYE.jpg'
           alt='best sell image'
