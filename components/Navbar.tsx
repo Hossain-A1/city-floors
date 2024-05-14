@@ -107,7 +107,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href='#support'
+                  href='supports'
                   onClick={() => setOpenModal(false)}
                   className='font-semibold text-lg cursor-pointer'
                 >
